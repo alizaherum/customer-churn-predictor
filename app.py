@@ -32,7 +32,7 @@ if st.button("Predict Churn"):
         "TotalCharges": monthly_charges * tenure
     }
     
-    response = requests.post("http://api:8000/predict", json=data)
+    response = requests.post("https://customer-churn-predictor-7kix.onrender.com/predict", json=data)
     result = response.json()
     
     st.metric("Churn Probability", f"{result['churn_probability']*100:.1f}%")
